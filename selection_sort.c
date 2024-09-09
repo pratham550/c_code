@@ -1,24 +1,31 @@
 #include<stdio.h>
-#define SIZE 10
-#define Swap(a,b) { int t = a; a = b; b = t;}
+#define size 10
+#define swap(a,b) {int t = a; a = b; b = t;}
 int main(void)
-{
-    int arr[SIZE] = {1,33,22,5,11,89,67,32,54,70},i=0,j=0;
-    for(i=0;i<SIZE;i++){
-    int min = i;
-    for(j=i+1;j<SIZE;j++)
-    {
-        if(arr[j]<arr[min])
-        {
-            min = j;
-        }
-    }
-    if(min!=i)
-    {
-        Swap(arr[i],arr[min]);
-    }
-    printf("\t%d",arr[i]);
+{   
+    int arr[size] = {1,33,44,66,77,3,6,10,34,89};
+    selection_sort(arr);
 
-    }
     return 0;
+}
+int selection_sort(int arr[size])
+{
+   // int arr[size];
+    for(int i =0;i<size;i++)
+    {
+        int min = i;
+        for(int j = i+1;j<size;j++)
+        {
+            if(arr[j]<arr[min])
+            {
+                min =j;
+            }
+
+        }
+        if(min!=i)
+        {
+            swap(arr[i],arr[min]);
+        }
+        printf("%d ",arr[i]);
+    }
 }
