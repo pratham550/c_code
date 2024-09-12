@@ -40,23 +40,25 @@ void append(struct node **q,int num)
     struct node *temp,*r;
     if(*q == NULL)//NULL is used because it shows that node we are pointing at is last node or list is empty
     {
-        temp = (struct node*)malloc(sizeof(struct node));
-        temp->data = num;
-        temp -> link = NULL;
+        temp = (struct node*)malloc(sizeof(struct node));//allocated memory to the node
+        temp->data = num;//data set
+        temp -> link = NULL;//link set
         *q = temp;
     
     }
     else 
     {
-        temp = *q;
+        temp = *q;//temp is made to point the first node in the linked list//
+
         //here we are going to the last node because we didnt find an empty node
         while(temp->link != NULL)
         temp = temp->link;
         //adding node at the end
         r = (struct node*)malloc(sizeof(struct node));
+        //new nodes data part is set with num and link with NULL
         r -> data=num;
         r -> link=NULL;
-        temp -> link = r;
+        temp -> link = r;//connecting previous last node with new last node 
     }
 }
 //this function adds a new node at the begining
