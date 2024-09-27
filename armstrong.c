@@ -24,5 +24,4 @@ int armstrong(int arm)
 
     else
     printf("%d is not an armstrong number\n",arm);
-
 }
