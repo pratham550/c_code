@@ -1,24 +1,30 @@
 #include<stdio.h>
-char strev(char str[50]);
+
+char strrev(char str[50]);
+
 int main(void)
-{   
+{
     char str[50];
-    printf("Enter the string to be reversed\n");
+
+    printf("Enter the string\n");
     scanf("%[^\n]s",str);
-    strev(str);
+    strrev(str);
     return 0;
 }
-char strev(char str[50])//user defined function to reverse a string
-{   
+
+char strrev(char str[50])
+{
     char temp;
-    int i=0,j=0;
+    int i = 0,j=0;
     for(;str[i]!='\0';i++);
     i--;
     for(;j<i;j++,i--)
     {
         temp = str[j];
-        str[j]=str[i];
-        str[i]=temp;
+        str[j] = str[i];
+        str[i] = temp;
     }
     printf("%s",str);
+
+
 }

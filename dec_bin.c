@@ -19,6 +19,7 @@ void dec_bin(int num,int cnt){
         return ;
     int a = num % 10;
     sum = a * pow(2,cnt);
+    printf("sum = %d\n",sum);
     sum2 += sum;
     dec_bin(num/10,++cnt);
     
